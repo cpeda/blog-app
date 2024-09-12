@@ -1,0 +1,49 @@
+<form class="example-form" [formGroup]="myForm">
+  <div class="container">
+    <mat-form-field class="barra">
+      <mat-label>Título</mat-label>
+      <input matInput placeholder="Escriba el título aquí" formControlName="title">
+      <mat-error *ngIf="title.invalid && (title.dirty || title.touched)">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="barra">
+      <mat-label>Bajada de título</mat-label>
+      <input matInput placeholder="Escriba el subtítulo aquí" formControlName="subtitle" required>
+    </mat-form-field>
+
+    <mat-form-field class="barra">
+      <mat-label>Cuerpo</mat-label>
+      <textarea matInput placeholder="Escriba el contenido de la noticia aquí" formControlName="subtitle" rows="5" required></textarea>
+    </mat-form-field>
+
+    
+
+    <mat-form-field class="barra">
+      <mat-label>Tipo</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let type of types" [value]="type">
+          {{ type }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+
+    <div>
+      <mat-form-field class="example-half-width">
+        <mat-label>Nombre y apellido</mat-label>
+        <input matInput placeholder="Nombre del publicador" formControlName="subtitle" required>
+      </mat-form-field>
+      <mat-form-field class="example-half-width">
+        <mat-label>Cargo</mat-label>
+        <input matInput placeholder="Cargo del publicador" formControlName="subtitle" required>
+      </mat-form-field>
+    </div>
+
+    <br />
+    <div>
+      <button mat-raised-button color="primary">Guardar</button>
+    </div>
+  </div>
+  <div></div>
+</form>
+{{myForm.value | json}}

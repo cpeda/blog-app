@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'blog-app';
+  title = 'La Estrella de Arica';
+
+  
+  changeTitle(InputData: string) {
+    this.title = InputData;
+}
 }
