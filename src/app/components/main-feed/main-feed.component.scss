@@ -2,10 +2,10 @@
 
   
 .crear-noticia {
-  background-color: #ffffff; /* Fondo blanco */
-  border: 1px solid #b3e5fc; /* Borde celeste claro */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: #ffffff; 
+  border: 1px solid #b3e5fc; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   margin-bottom: 20px;
   padding: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -16,9 +16,9 @@
 
 
   
-  /* Botón de eliminar */
+  
 .delete-button {
-  background-color: #f44336; /* Rojo */
+  background-color: #f44336; 
   color: white;
   border: none;
   border-radius: 5px;
@@ -30,7 +30,7 @@
 }
 
 .delete-button:hover {
-  background-color: #d32f2f; /* Rojo más oscuro al pasar el mouse */
+  background-color: #d32f2f; 
 }
 
   
@@ -135,68 +135,68 @@
 
 
 
- /* Estilos generales */
 :host {
+ 
   display: block;
   padding: 20px;
-  background-color: #e0f7fa; /* Fondo celeste claro */
+  background-color: #e0f7fa; 
   font-family: 'Arial', sans-serif;
 }
 
-/* Contenedor principal */
+
 .main-feed-container {
   max-width: 1500px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Cada blog en su propio recuadro */
+
 .blog-card {
-  background-color: #ffffff; /* Fondo blanco */
-  border: 1px solid #b3e5fc; /* Borde celeste claro */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: #ffffff; 
+  border: 1px solid #b3e5fc; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   margin-bottom: 20px;
   padding: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .blog-card:hover {
-  transform: translateY(-5px); /* Efecto de levantarse cuando pasas el mouse */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
-/* Título del blog */
+
 .blog-title {
-  color: #0277bd; /* Color celeste oscuro */
+  color: #0277bd; 
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-/* Subtítulo del blog */
+
 .blog-subtitle {
-  color: #0288d1; /* Color celeste */
+  color: #0288d1; 
   font-size: 18px;
   margin-bottom: 15px;
 }
 
-/* Cuerpo del blog */
+
 .blog-body {
-  color: #555555; /* Texto gris oscuro */
+  color: #555555; 
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 15px;
 }
 
-/* Información adicional */
+
 .blog-info {
   font-size: 14px;
   color: #777777;
   margin-bottom: 5px;
 }
 
-/* Pequeños detalles (fechas, publicador, etc.) */
+
 small {
   display: block;
   color: #999999;
@@ -207,10 +207,10 @@ small {
 
 
 button:hover {
-  background-color: #0288d1; /* Celeste oscuro al pasar el mouse */
+  background-color: #0288d1; 
 }
 
-/* Separador entre blogs */
+
 hr {
   border: 0;
   height: 1px;
@@ -218,7 +218,7 @@ hr {
   margin: 20px 0;
 }
 
-/* Responsive: Ajustar en pantallas más pequeñas */
+
 @media (max-width: 768px) {
   .main-feed-container {
     padding: 10px;
