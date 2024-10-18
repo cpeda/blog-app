@@ -7,31 +7,26 @@
     </mat-form-field>
 
     <mat-form-field class="barra">
-      <mat-label>Bajada de título</mat-label>
+      <mat-label>subtítulo</mat-label>
       <input matInput placeholder="Escriba el subtítulo aquí" formControlName="subtitle" required>
     </mat-form-field>
 
     <mat-form-field class="barra">
       <mat-label>Cuerpo</mat-label>
-      <textarea matInput placeholder="Escriba el contenido de la noticia aquí" formControlName="subtitle" rows="5" required></textarea>
+      <textarea matInput placeholder="Escriba el contenido de la noticia aquí" formControlName="body" rows="5" required></textarea>
     </mat-form-field>
 
-    <section class="example-section">
-      <mat-checkbox class="example-margin">noticias actuales</mat-checkbox>
-    </section>
-    
-
-    
 
     <mat-form-field class="barra">
       <mat-label>Tipo</mat-label>
-      <mat-select>
+      <mat-select formControlName="reportType">
         <mat-option *ngFor="let type of types" [value]="type">
           {{ type }}
         </mat-option>
       </mat-select>
     </mat-form-field>
     
+    <mat-checkbox formControlName ="isPrimary">noticia destacada </mat-checkbox>
 
     <div>
       <mat-form-field class="example-half-width">
@@ -46,9 +41,11 @@
 
     <br />
     <div>
-      <button mat-raised-button color="primary">Guardar</button>
+      <button mat-raised-button (click)="saveForm()">Guardar</button> 
     </div>
   </div>
   <div></div>
 </form>
+
+
 {{myForm.value | json}}

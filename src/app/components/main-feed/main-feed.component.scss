@@ -1,0 +1,244 @@
+
+
+  
+.crear-noticia {
+  background-color: #ffffff; /* Fondo blanco */
+  border: 1px solid #b3e5fc; /* Borde celeste claro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+}
+  
+  @import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+
+  
+  /* Botón de eliminar */
+.delete-button {
+  background-color: #f44336; /* Rojo */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f; /* Rojo más oscuro al pasar el mouse */
+}
+
+  
+  body {
+    margin:0;
+  }
+  
+  h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight:300;
+    letter-spacing: 2px;
+    font-size:48px;
+  }
+  
+  
+  .header {
+    position:relative;
+    text-align:center;
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+    color:white;
+  }
+  .logo {
+    width:50px;
+    fill:white;
+    padding-right:15px;
+    display:inline-block;
+    vertical-align: middle;
+  }
+  
+  .inner-header {
+    height:15vh;
+    width:100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .flex { /*Flexbox for containers*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .waves {
+    position:relative;
+    width: 100%;
+    height:15vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height:50px;
+    max-height:50px;
+  }
+  
+  
+  /* Animation */
+  
+  .parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  }
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+  @keyframes move-forever {
+    0% {
+     transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+  }
+  /*Shrinking for mobile*/
+  @media (max-width: 768px) {
+    .waves {
+      height:40px;
+      min-height:40px;
+    }
+    .content {
+      height:30vh;
+    }
+    h1 {
+      font-size:24px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+ /* Estilos generales */
+:host {
+  display: block;
+  padding: 20px;
+  background-color: #e0f7fa; /* Fondo celeste claro */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor principal */
+.main-feed-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Cada blog en su propio recuadro */
+.blog-card {
+  background-color: #ffffff; /* Fondo blanco */
+  border: 1px solid #b3e5fc; /* Borde celeste claro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px); /* Efecto de levantarse cuando pasas el mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+}
+
+/* Título del blog */
+.blog-title {
+  color: #0277bd; /* Color celeste oscuro */
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Subtítulo del blog */
+.blog-subtitle {
+  color: #0288d1; /* Color celeste */
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Cuerpo del blog */
+.blog-body {
+  color: #555555; /* Texto gris oscuro */
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Información adicional */
+.blog-info {
+  font-size: 14px;
+  color: #777777;
+  margin-bottom: 5px;
+}
+
+/* Pequeños detalles (fechas, publicador, etc.) */
+small {
+  display: block;
+  color: #999999;
+  font-size: 12px;
+}
+
+
+
+
+button:hover {
+  background-color: #0288d1; /* Celeste oscuro al pasar el mouse */
+}
+
+/* Separador entre blogs */
+hr {
+  border: 0;
+  height: 1px;
+  background: #00bcd4;
+  margin: 20px 0;
+}
+
+/* Responsive: Ajustar en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .main-feed-container {
+    padding: 10px;
+  }
+
+  .blog-card {
+    padding: 15px;
+  }
+
+  .blog-title {
+    font-size: 20px;
+  }
+
+  .blog-subtitle {
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;
+    text-align: center;
+  }
+}
+

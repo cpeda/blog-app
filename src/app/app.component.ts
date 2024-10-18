@@ -9,7 +9,5 @@ export class AppComponent {
   title = 'La Estrella de Arica';
 
   
-  changeTitle(InputData: string) {
-    this.title = InputData;
-}
+  
 }

@@ -1,5 +1,3 @@
-
-
 <div class="header">
 
     <!--Content before waves-->
@@ -36,5 +34,46 @@
     
     </div>
     <!--Header ends-->
+
+    <div class= "crear-noticia">
+        <button class="hola"  mat-raised-button (click)="openForm()" >crear formulario</button>
+    </div>
+
+
+    
+
+
+   
+    <div class="main-header">
+       
+        </div>
+
+        <div class="main-feed-container">
+        <div *ngFor="let blog of blogs" class="blog-card">
+          <h2 class="blog-title">{{ blog.title }}</h2>
+          <h4 class="blog-subtitle">{{ blog.subtitle }}</h4>
+          <p class="blog-body">{{ blog.body }}</p>
+          <p class="blog-info"><strong>Tipo de reporte:</strong> {{ blog.report_type }}</p>
+          <p class="blog-info"><strong>Es primario:</strong> {{ blog.is_primary ? 'Sí' : 'No' }}</p>
+          <p class="blog-info"><strong>Publicado por:</strong> {{ blog.publisher_name }}</p>
+          <small>Creado en: {{ blog.created_ad | date:'short' }}</small>
+          
+      
+          
+          <button class="delete-button" (click)="deleteBlog(blog.id)">Eliminar</button>
+          
+          <hr />
+        </div>
+      
+       
+      </div>
+
+      
+      
+      
+      
+      
+      
+
     
     
