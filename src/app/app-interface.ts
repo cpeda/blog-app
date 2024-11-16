@@ -1,5 +1,16 @@
 export interface Blog {
-    id?: number;
+    id: number;
+    title: string;
+    subtitle: string;
+    body: string;
+    report_type: string;
+    is_primary: boolean;
+    publisher_name: string;
+    publisher_job: string;
+    created_at: string;
+  }
+
+  export interface BlogFormData {
     title: string;
     subtitle: string;
     body: string;
@@ -7,7 +18,10 @@ export interface Blog {
     isPrimary: boolean;
     publisherName: string;
     publisherJob: string;
-    createdAt?: string;
+    topnews: boolean;
+    typeNews: string;
+    conten: string;
   }
+  
 
   

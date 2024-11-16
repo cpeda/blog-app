@@ -1,0 +1,16 @@
+<div *ngIf="isLoading" class="loading">
+    Cargando noticia...
+  </div>
+  
+  <div *ngIf="!isLoading && blog" class="blog-details">
+    <h1>{{ blog.title }}</h1>
+    <h2>{{ blog.subtitle }}</h2>
+    <p><strong>Publicado por:</strong> {{ blog.publisher_name }} ({{ blog.publisher_job }})</p>
+    <p><strong>Tipo:</strong> {{ blog.report_type }}</p>
+    <p>{{ blog.body }}</p>
+  </div>
+  
+  <div *ngIf="!blog && !isLoading" class="error">
+    <p>No se pudo cargar la noticia.</p>
+  </div>
+  

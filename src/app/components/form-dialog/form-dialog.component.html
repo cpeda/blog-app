@@ -1,22 +1,33 @@
-<form class="example-form" [formGroup]="myForm">
+<form class="example-form" [formGroup]="myForm" (ngSubmit)="saveForm()">
   <div class="container">
+    <!-- Campo Título -->
     <mat-form-field class="barra">
       <mat-label>Título</mat-label>
       <input matInput placeholder="Escriba el título aquí" formControlName="title">
-      <mat-error *ngIf="title.invalid && (title.dirty || title.touched)">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="myForm.get('title')?.invalid && (myForm.get('title')?.dirty || myForm.get('title')?.touched)">
+        {{ getErrorMessage() }}
+      </mat-error>
     </mat-form-field>
 
+    <!-- Campo Subtítulo -->
     <mat-form-field class="barra">
-      <mat-label>subtítulo</mat-label>
+      <mat-label>Subtítulo</mat-label>
       <input matInput placeholder="Escriba el subtítulo aquí" formControlName="subtitle" required>
+      <mat-error *ngIf="myForm.get('subtitle')?.invalid && (myForm.get('subtitle')?.dirty || myForm.get('subtitle')?.touched)">
+        {{ getErrorMessage() }}
+      </mat-error>
     </mat-form-field>
 
+    <!-- Campo Cuerpo -->
     <mat-form-field class="barra">
       <mat-label>Cuerpo</mat-label>
       <textarea matInput placeholder="Escriba el contenido de la noticia aquí" formControlName="body" rows="5" required></textarea>
+      <mat-error *ngIf="myForm.get('body')?.invalid && (myForm.get('body')?.dirty || myForm.get('body')?.touched)">
+        {{ getErrorMessage() }}
+      </mat-error>
     </mat-form-field>
 
-
+    <!-- Campo Tipo -->
     <mat-form-field class="barra">
       <mat-label>Tipo</mat-label>
       <mat-select formControlName="reportType">
@@ -24,28 +35,41 @@
           {{ type }}
         </mat-option>
       </mat-select>
+      <mat-error *ngIf="myForm.get('reportType')?.invalid && (myForm.get('reportType')?.dirty || myForm.get('reportType')?.touched)">
+        {{ getErrorMessage() }}
+      </mat-error>
     </mat-form-field>
-    
-    <mat-checkbox formControlName ="isPrimary">noticia destacada </mat-checkbox>
 
+    <!-- Checkbox Noticia Destacada -->
+    <mat-checkbox formControlName="isPrimary">Noticia destacada</mat-checkbox>
+
+    <!-- Campos Nombre y Cargo del Publicador -->
     <div>
       <mat-form-field class="example-half-width">
         <mat-label>Nombre y apellido</mat-label>
-        <input matInput placeholder="Nombre del publicador" formControlName="subtitle" required>
+        <input matInput placeholder="Nombre del publicador" formControlName="publisherName" required>
+        <mat-error *ngIf="myForm.get('publisherName')?.invalid && (myForm.get('publisherName')?.dirty || myForm.get('publisherName')?.touched)">
+          {{ getErrorMessage() }}
+        </mat-error>
       </mat-form-field>
+
       <mat-form-field class="example-half-width">
         <mat-label>Cargo</mat-label>
-        <input matInput placeholder="Cargo del publicador" formControlName="subtitle" required>
+        <input matInput placeholder="Cargo del publicador" formControlName="publisherJob" required>
+        <mat-error *ngIf="myForm.get('publisherJob')?.invalid && (myForm.get('publisherJob')?.dirty || myForm.get('publisherJob')?.touched)">
+          {{ getErrorMessage() }}
+        </mat-error>
       </mat-form-field>
     </div>
 
-    <br />
+    <!-- Botones -->
     <div>
-      <button mat-raised-button (click)="saveForm()">Guardar</button> 
+      <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Guardar</button>
+      <button mat-raised-button color="warn" type="button" (click)="close()">Cancelar</button>
     </div>
   </div>
-  <div></div>
 </form>
 
 
-{{myForm.value | json}}
+
+<!-- {{myForm.value | json}} -->
