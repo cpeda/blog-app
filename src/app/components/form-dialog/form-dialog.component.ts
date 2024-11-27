@@ -64,9 +64,6 @@ export class FormDialogComponent implements OnInit {
         isPrimary: this.myForm.value.isPrimary ?? false,
         publisherName: this.myForm.value.publisherName ?? '',
         publisherJob: this.myForm.value.publisherJob ?? '',
-        topnews: this.myForm.value.isPrimary ?? false, 
-        typeNews: this.myForm.value.reportType ?? '', 
-        conten: this.myForm.value.body ?? '', 
       };
       
   

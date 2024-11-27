@@ -18,9 +18,6 @@ export interface Blog {
     isPrimary: boolean;
     publisherName: string;
     publisherJob: string;
-    topnews: boolean;
-    typeNews: string;
-    conten: string;
   }
   
 

@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./main-feed.component.scss']
 })
 export class MainFeedComponent implements OnInit {
-  blogs: Blog[] = []; 
+  blogs: Blog[] = [];
   isLoading = false; 
   isLoadingBlogs = false; 
 
@@ -38,7 +38,7 @@ export class MainFeedComponent implements OnInit {
     this.isLoadingBlogs = true;
     this.services.getAll().subscribe({
       next: (response) => {
-        this.blogs = response;
+        this.blogs = response.data;
         console.log('Blogs cargados exitosamente:', this.blogs);
         this.isLoadingBlogs = false;
       },
@@ -119,9 +119,6 @@ export class MainFeedComponent implements OnInit {
               isPrimary: data.isPrimary,
               publisherName: data.publisherName,
               publisherJob: data.publisherJob,
-              topnews: data.topnews,
-              typeNews: data.typeNews,
-              conten: data.conten,
             };
   
             this.services.updateBlog(blogId, blogDataUpdate).subscribe({

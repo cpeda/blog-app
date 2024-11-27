@@ -8,12 +8,12 @@ import { Blog, BlogFormData } from '../app-interface';
   providedIn: 'root',
 })
 export class MainService {
-  private readonly URL = 'http://localhost:3000';
+  private URL = 'https://blog-api-flax-rho.vercel.app';
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Blog[]> {
-    return this.http.get<Blog[]>(`${this.URL}/blogs`).pipe(
+  getAll(): Observable<any> {
+    return this.http.get<any>(`${this.URL}/blogs`).pipe(
       catchError(this.handleError)
     );
   }
