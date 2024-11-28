@@ -1,6 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Editor, toHTML, Toolbar } from 'ngx-editor';
 import { Blog, BlogFormData } from 'src/app/app-interface';
 
 @Component({
@@ -8,7 +9,7 @@ import { Blog, BlogFormData } from 'src/app/app-interface';
   templateUrl: './form-dialog.component.html',
   styleUrls: ['./form-dialog.component.scss'],
 })
-export class FormDialogComponent implements OnInit {
+export class FormDialogComponent implements OnInit, OnDestroy {
  
   myForm = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -19,7 +20,18 @@ export class FormDialogComponent implements OnInit {
     publisherName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
     publisherJob: new FormControl('', Validators.required),
   });
-
+  
+  editor!: Editor;
+  toolbar: Toolbar = [
+    ['bold', 'italic'],
+    ['underline', 'strike'],
+    ['code', 'blockquote'],
+    ['ordered_list', 'bullet_list'],
+    [{ heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }],
+    ['link', 'image'],
+    ['text_color', 'background_color'],
+    ['align_left', 'align_center', 'align_right', 'align_justify'],
+  ];
   
   types: string[] = ['Noticia', 'Artículo', 'Aviso', 'Entrevista'];
 
@@ -29,7 +41,8 @@ export class FormDialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    
+    this.editor = new Editor();
+
     if (this.data) {
       this.myForm.patchValue({
         title: this.data.title,
@@ -42,7 +55,9 @@ export class FormDialogComponent implements OnInit {
       });
     }
   }
-
+  ngOnDestroy(): void {
+    this.editor.destroy();
+  }
   
   getErrorMessage(): string {
     return 'Campo obligatorio o mal formateado';
@@ -59,7 +74,7 @@ export class FormDialogComponent implements OnInit {
       const blogFormData: BlogFormData = {
         title: this.myForm.value.title ?? '',
         subtitle: this.myForm.value.subtitle ?? '',
-        body: this.myForm.value.body ?? '',
+        body: toHTML( this.myForm.value.body as any) ?? '',
         reportType: this.myForm.value.reportType ?? '',
         isPrimary: this.myForm.value.isPrimary ?? false,
         publisherName: this.myForm.value.publisherName ?? '',

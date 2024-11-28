@@ -19,7 +19,8 @@ export class SingleViewComponent implements OnInit {
     if (blogId) {
       this.service.getBlogById(blogId).subscribe({
         next: (response) => {
-          this.blog = response;
+          
+          this.blog = response.data[0]
           this.isLoading = false;
         },
         error: () => {

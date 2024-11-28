@@ -7,7 +7,7 @@
     <h2>{{ blog.subtitle }}</h2>
     <p><strong>Publicado por:</strong> {{ blog.publisher_name }} ({{ blog.publisher_job }})</p>
     <p><strong>Tipo:</strong> {{ blog.report_type }}</p>
-    <p>{{ blog.body }}</p>
+   <div [innerHTML]="blog.body">  </div>
   </div>
   
   <div *ngIf="!blog && !isLoading" class="error">

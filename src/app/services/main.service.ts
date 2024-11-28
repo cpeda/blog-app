@@ -18,8 +18,8 @@ export class MainService {
     );
   }
 
-  getBlogById(id: number): Observable<Blog> {
-    return this.http.get<Blog>(`${this.URL}/blogs/${id}`).pipe(
+  getBlogById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.URL}/blogs/${id}`).pipe(
       catchError(this.handleError)
     );
   }

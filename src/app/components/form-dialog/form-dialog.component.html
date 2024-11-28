@@ -19,13 +19,15 @@
     </mat-form-field>
 
     <!-- Campo Cuerpo -->
-    <mat-form-field class="barra">
-      <mat-label>Cuerpo</mat-label>
-      <textarea matInput placeholder="Escriba el contenido de la noticia aquí" formControlName="body" rows="5" required></textarea>
+   
+      <div class="NgxEditor__Wrapper">
+        <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+        <ngx-editor [editor]="editor" formControlName="body" [placeholder]="'Type here...'"></ngx-editor>
+      </div>
       <!-- <mat-error *ngIf="myForm.get('body')?.invalid && (myForm.get('body')?.dirty || myForm.get('body')?.touched)">
         {{ getErrorMessage() }}
       </mat-error> -->
-    </mat-form-field>
+   
 
     <!-- Campo Tipo -->
     <mat-form-field class="barra">
@@ -72,4 +74,4 @@
 
 
 
-{{myForm.value | json}}
+<!-- {{myForm.value | json}} -->
