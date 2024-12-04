@@ -58,9 +58,9 @@
       <mat-form-field class="example-half-width">
         <mat-label>Cargo</mat-label>
         <input matInput placeholder="Cargo del publicador" formControlName="publisherJob" required>
-        <!-- <mat-error *ngIf="myForm.get('publisherJob')?.invalid && (myForm.get('publisherJob')?.dirty || myForm.get('publisherJob')?.touched)">
+        <mat-error *ngIf="myForm.get('publisherJob')?.invalid && (myForm.get('publisherJob')?.dirty || myForm.get('publisherJob')?.touched)">
           {{ getErrorMessage() }}
-        </mat-error> -->
+        </mat-error>
       </mat-form-field>
     </div>
 
